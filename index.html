@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok Downloader</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="header">
+            <div class="logo">
+                <i class="fab fa-tiktok" style="font-size: 3rem; color: #fe2c55;"></i>
+            </div>
+            <h1>TikTok <span class="highlight">Downloader</span></h1>
+            <p class="subtitle">High-quality Video (No WM) & Photo Slideshows</p>
+        </div>
+
+        <div class="card main-card">
+            <div class="input-group">
+                <i class="fas fa-link icon-link"></i>
+                <input type="text" id="urlInput" placeholder="Paste TikTok link here...">
+            </div>
+
+            <div class="select-group">
+                <select id="formatSelect">
+                    <option value="mp4">MP4 (Video No Watermark)</option>
+                    <option value="mp3">MP3 (Audio Only)</option>
+                </select>
+                <i class="fas fa-chevron-down icon-select"></i>
+            </div>
+
+            <button id="downloadBtn" onclick="fetchData()">
+                <i class="fas fa-bolt"></i> Download Now
+            </button>
+            <div id="loader" class="loader hidden"></div>
+        </div>
+
+        <div id="resultArea" class="card result-card hidden">
+            <div class="user-info">
+                <h3 id="resUsername">Username</h3>
+                <div class="stats">
+                    <span><i class="fas fa-play"></i> <span id="resViews">0</span></span>
+                    <span><i class="fas fa-heart"></i> <span id="resLikes">0</span></span>
+                </div>
+            </div>
+
+            <div id="videoContainer" class="hidden">
+                <video id="videoPlayer" controls></video>
+                <div class="action-buttons">
+                    <a id="btnVideoNowm" href="#" target="_blank" class="btn-secondary">Download Video (No WM)</a>
+                    <a id="btnAudio" href="#" target="_blank" class="btn-secondary outline">Download Audio</a>
+                </div>
+            </div>
+
+            <div id="photoContainer" class="hidden">
+                <div class="slider-wrapper">
+                    <div class="slider" id="sliderTrack">
+                        </div>
+                </div>
+                <div class="slider-controls">
+                    <button onclick="moveSlide(-1)">&#10094;</button>
+                    <span id="slideCounter">1 / 5</span>
+                    <button onclick="moveSlide(1)">&#10095;</button>
+                </div>
+                <button id="btnDownloadCurrentSlide" class="btn-secondary" style="margin-top: 15px;">
+                    Download This Photo
+                </button>
+                <button id="downloadAllBtn" class="btn-secondary outline" style="margin-top: 10px;">
+                    Download All Photos (Zip)
+                </button>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="icon-circle"><i class="fas fa-bolt"></i></div>
+                <span>SUPER FAST</span>
+            </div>
+            <div class="feature-item">
+                <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
+                <span>SECURE</span>
+            </div>
+            <div class="feature-item">
+                <div class="icon-circle"><i class="fas fa-star"></i></div>
+                <span>HIGH QUALITY</span>
+            </div>
+            <div class="feature-item">
+                <div class="icon-circle"><i class="fas fa-mobile-alt"></i></div>
+                <span>RESPONSIVE</span>
+            </div>
+        </div>
+
+        <div class="card instructions">
+            <h2><i class="fas fa-book-open"></i> How to Use</h2>
+            <div class="step">
+                <div class="step-num">1</div>
+                <p>Open TikTok App & Copy Link</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <p>Paste Link in the box above</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <p>Click Download & Save MP3/MP4/Photo</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>SANN404 FORUM © 2026</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

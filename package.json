@@ -1,0 +1,11 @@
+{
+  "name": "tiktok-downloader-vercel",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node api/download.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}

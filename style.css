@@ -1,0 +1,190 @@
+:root {
+    --bg-color: #0d0d0d;
+    --card-bg: #1a1a1a;
+    --primary: #fe2c55; /* TikTok Red */
+    --primary-hover: #e02045;
+    --text-main: #ffffff;
+    --text-muted: #888888;
+    --border-radius: 20px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    /* Grid background effect (optional) */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px; /* Mobile app feel */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Header */
+.header { text-align: center; margin-bottom: 10px; }
+.header h1 { font-size: 24px; font-weight: 800; margin-top: 10px; }
+.highlight { color: var(--primary); }
+.subtitle { color: var(--text-muted); font-size: 14px; margin-top: 5px; }
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Inputs */
+.input-group, .select-group {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+input, select {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+}
+
+.icon-link, .icon-select { color: var(--text-muted); }
+select { appearance: none; cursor: pointer; } 
+
+/* Button */
+#downloadBtn {
+    background-color: var(--primary);
+    color: white;
+    width: 100%;
+    border: none;
+    padding: 16px;
+    border-radius: 30px; /* Pill shape */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#downloadBtn:hover { background-color: var(--primary-hover); transform: scale(1.02); }
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    text-align: center;
+}
+.feature-item span { font-size: 10px; font-weight: bold; color: white; display: block; margin-top: 5px;}
+.icon-circle {
+    background: #252525;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 20px;
+}
+
+/* Instructions */
+.instructions h2 { font-size: 18px; display: flex; align-items: center; gap: 10px; margin-bottom: 20px;}
+.step { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+.step-num {
+    background: var(--primary);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+.step p { font-size: 14px; color: #ddd; }
+
+/* Result Area */
+.hidden { display: none !important; }
+.user-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+.stats span { margin-left: 10px; font-size: 12px; color: var(--text-muted); }
+
+/* Video Player */
+video { width: 100%; border-radius: 10px; margin-bottom: 15px; }
+
+/* Buttons */
+.btn-secondary {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #2a2a2a;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+.btn-secondary.outline { border: 1px solid #333; background: transparent; }
+.btn-secondary:hover { background: #333; }
+
+/* Photo Slider Styles */
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    aspect-ratio: 9/16; /* TikTok ratio */
+    background: #000;
+}
+.slider {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+}
+.slider img {
+    min-width: 100%;
+    object-fit: contain;
+    height: 100%;
+}
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    color: white;
+}
+.slider-controls button {
+    background: transparent; border: none; color: white; font-size: 20px; cursor: pointer; padding: 0 15px;
+}
+.loader {
+    border: 4px solid #333; border-top: 4px solid var(--primary); border-radius: 50%; width: 30px; height: 30px;
+    animation: spin 1s linear infinite; margin: 10px auto;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+.footer { text-align: center; color: #444; font-size: 12px; margin-top: 20px; font-weight: bold; letter-spacing: 1px;}
